@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>상호명</th>
+        <th>이름</th>
+        <th>이메일</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="q : ${Qnas}">
+        <td th:text="${q.corpName}"></td>
+        <td th:text="${q.name}"></td>
+        <td th:text="${q.email}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div> <!-- /container -->
+</body>
+</html>
