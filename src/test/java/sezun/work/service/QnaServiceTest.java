@@ -13,8 +13,8 @@ public class QnaServiceTest {
 
     @BeforeEach
     public void BeforeEach(){
-        qnaService = new QnaService();
         qnaRepository = new MemoryQnaRepository();
+        qnaService = new QnaService(qnaRepository);
     }
 
     @AfterEach

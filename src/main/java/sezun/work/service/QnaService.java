@@ -8,7 +8,12 @@ import java.util.List;
 import java.util.Optional;
 
 public class QnaService {
-    QnaRepository qnaRepository = new MemoryQnaRepository();
+
+    private final QnaRepository qnaRepository;
+
+    public QnaService(QnaRepository qnaRepository){
+        this.qnaRepository = qnaRepository;
+    }
 
     public Long register(Qna qna){
         qnaRepository.save(qna);
