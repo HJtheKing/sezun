@@ -9,6 +9,10 @@
         <th>상호명</th>
         <th>이름</th>
         <th>이메일</th>
+        <th>연락처</th>
+        <th>구분</th>
+        <th>제목</th>
+        <th>내용</th>
 
       </tr>
       </thead>
@@ -17,6 +21,10 @@
         <td th:text="${q.corpName}"></td>
         <td th:text="${q.name}"></td>
         <td th:text="${q.email}"></td>
+        <td th:text="${q.contactNum}"></td>
+        <td th:text="${q.category}"></td>
+        <td th:text="${q.subject}"></td>
+        <td th:text="${q.object}"></td>
       </tr>
       </tbody>
     </table>

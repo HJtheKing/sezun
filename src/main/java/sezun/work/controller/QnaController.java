@@ -30,9 +30,12 @@ public class QnaController {
         qna.setCorpName(form.getCorpName());
         qna.setName(form.getName());
         qna.setEmail(form.getEmail());
+        qna.setContactNum(form.getContactNum());
+        qna.setCategory(form.getCategory());
+        qna.setSubject(form.getSubject());
+        qna.setObject(form.getObject());
 
         qnaService.register(qna);
-        Qna result = qnaService.findOne(1L).get();
         return "redirect:/";
     }
     @GetMapping(value = "/qna/list")
