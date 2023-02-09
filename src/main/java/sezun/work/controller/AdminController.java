@@ -1,6 +1,7 @@
 package sezun.work.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.validation.BindingResult;
@@ -20,7 +21,7 @@ public class AdminController {
         return "Admin/SignupForm";}
 
     @PostMapping(value = "/signup")
-    public String register(AdminForm form, BindingResult bindingResult){
+    public String join(AdminForm form, BindingResult bindingResult){
         Admin admin = new Admin();
         admin.setUserName(form.getUserName());
         if(!form.getPassword1().equals(form.getPassword2())){
@@ -29,7 +30,14 @@ public class AdminController {
             return "Admin/SignupForm";
         }
         admin.setPassword(form.getPassword1());
-        adminService.register(admin);
+        adminService.join(admin);
         return "redirect:/";
+    }
+
+    @GetMapping(value = "/signuplist")
+    public String signupList(Model model){
+        Admin admin = adminService.findOne(1l);
+        model.addAttribute("Admin", admin);
+        return "Admin/SignupList";
     }
 }
