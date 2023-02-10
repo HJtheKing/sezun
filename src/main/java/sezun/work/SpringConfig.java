@@ -2,7 +2,10 @@ package sezun.work;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import sezun.work.repository.*;
+import sezun.work.repository.Admin.AdminRepository;
+import sezun.work.repository.Admin.JpaAdminRepository;
+import sezun.work.repository.Qna.MemoryQnaRepository;
+import sezun.work.repository.Qna.QnaRepository;
 import sezun.work.service.AdminService;
 import sezun.work.service.QnaService;
 

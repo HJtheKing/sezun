@@ -1,4 +1,4 @@
-package sezun.work.controller;
+package sezun.work.controller.Qna;
 
 public class QnaForm {
     private String corpName;

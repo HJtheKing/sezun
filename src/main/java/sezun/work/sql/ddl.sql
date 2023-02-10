@@ -1,3 +1,4 @@
+# Admin 테이블
 drop table if exists Admin CASCADE;
 create table Admin
 (

@@ -1,4 +1,4 @@
-package sezun.work.repository;
+package sezun.work.repository.Qna;
 
 import sezun.work.domain.Qna;
 

@@ -1,4 +1,4 @@
-package sezun.work.controller;
+package sezun.work.controller.Admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

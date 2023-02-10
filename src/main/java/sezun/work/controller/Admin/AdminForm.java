@@ -1,4 +1,4 @@
-package sezun.work.controller;
+package sezun.work.controller.Admin;
 
 public class AdminForm {
     private String userName;

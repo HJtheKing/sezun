@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 import sezun.work.domain.Admin;
-import sezun.work.repository.AdminRepository;
+import sezun.work.repository.Admin.AdminRepository;
 
 @SpringBootTest
 @Transactional

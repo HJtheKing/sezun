@@ -1,8 +1,7 @@
 package sezun.work.service;
 
 import sezun.work.domain.Qna;
-import sezun.work.repository.MemoryQnaRepository;
-import sezun.work.repository.QnaRepository;
+import sezun.work.repository.Qna.QnaRepository;
 
 import java.util.List;
 import java.util.Optional;

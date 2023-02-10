@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sezun.work.domain.Qna;
-import sezun.work.repository.MemoryQnaRepository;
+import sezun.work.repository.Qna.MemoryQnaRepository;
 
 public class QnaServiceTest {
     QnaService qnaService;

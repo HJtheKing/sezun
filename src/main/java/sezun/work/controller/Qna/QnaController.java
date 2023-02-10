@@ -1,4 +1,4 @@
-package sezun.work.controller;
+package sezun.work.controller.Qna;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

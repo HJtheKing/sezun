@@ -2,7 +2,7 @@ package sezun.work.service;
 
 import org.springframework.transaction.annotation.Transactional;
 import sezun.work.domain.Admin;
-import sezun.work.repository.AdminRepository;
+import sezun.work.repository.Admin.AdminRepository;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 

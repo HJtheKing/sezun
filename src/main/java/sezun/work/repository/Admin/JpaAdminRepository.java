@@ -1,11 +1,12 @@
-package sezun.work.repository;
+package sezun.work.repository.Admin;
 
 import sezun.work.domain.Admin;
+import sezun.work.repository.Admin.AdminRepository;
 
 import javax.persistence.EntityManager;
 import java.util.Optional;
 
-public class JpaAdminRepository implements AdminRepository{
+public class JpaAdminRepository implements AdminRepository {
 
     private final EntityManager em;
 

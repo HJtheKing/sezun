@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import sezun.work.domain.Qna;
+import sezun.work.repository.Qna.MemoryQnaRepository;
 
 public class MemoryQnaRepositoryTest {
     MemoryQnaRepository repository = new MemoryQnaRepository();

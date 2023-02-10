@@ -1,4 +1,4 @@
-package sezun.work.repository;
+package sezun.work.repository.Admin;
 
 import sezun.work.domain.Admin;
 
