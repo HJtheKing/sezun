@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface AdminRepository {
     public Admin save(Admin admin);
     public Optional<Admin> findById(Long id);
+    public Optional<Admin> findByName(String name);
 }

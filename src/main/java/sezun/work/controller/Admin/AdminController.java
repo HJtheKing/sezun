@@ -40,4 +40,9 @@ public class AdminController {
         model.addAttribute("Admin", admin);
         return "Admin/SignupList";
     }
+
+    @GetMapping(value = "/login")
+    public String login(){
+        return "Admin/LoginForm";
+    }
 }

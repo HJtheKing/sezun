@@ -4,8 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import sezun.work.repository.Admin.AdminRepository;
 import sezun.work.repository.Admin.JpaAdminRepository;
+import sezun.work.repository.Qna.JpaQnaRepository;
 import sezun.work.repository.Qna.MemoryQnaRepository;
 import sezun.work.repository.Qna.QnaRepository;
+import sezun.work.service.AdminSecurityService;
 import sezun.work.service.AdminService;
 import sezun.work.service.QnaService;
 
@@ -28,7 +30,7 @@ public class SpringConfig {
 
     @Bean
     public QnaRepository qnaRepository(){
-        return new MemoryQnaRepository();
+        return new JpaQnaRepository(em);
     }
 
 
@@ -42,5 +44,9 @@ public class SpringConfig {
     public AdminService adminService(){
 
         return new AdminService(adminRepository());
+    }
+    @Bean
+    public AdminSecurityService adminSecurityService(){
+        return new AdminSecurityService(adminRepository());
     }
 }

@@ -27,4 +27,15 @@ public class AdminServiceIntegrationTest {
         Assertions.assertEquals(findAdmin.getUserName(), admin.getUserName());
 
     }
+    @Test
+    public void 회원찾기() throws Exception{
+        Admin admin = new Admin();
+        admin.setUserName("hi");
+        admin.setPassword("123");
+
+        Long savId = adminService.join(admin);
+
+        Admin findAdmin = adminRepository.findByName("hi").get();
+        Assertions.assertEquals(findAdmin.getUserName(), admin.getUserName());
+    }
 }

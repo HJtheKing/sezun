@@ -3,9 +3,11 @@ package sezun.work.service;
 import sezun.work.domain.Qna;
 import sezun.work.repository.Qna.QnaRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class QnaService {
 
     private final QnaRepository qnaRepository;
