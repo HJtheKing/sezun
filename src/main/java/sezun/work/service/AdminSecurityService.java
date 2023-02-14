@@ -7,20 +7,19 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 import sezun.work.domain.Admin;
+import sezun.work.domain.AdminRole;
 import sezun.work.repository.Admin.AdminRepository;
-import sezun.work.role.AdminRole;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
 public class AdminSecurityService implements UserDetailsService {
     private final AdminRepository adminRepository;
 
-    public AdminSecurityService(AdminRepository adminRepository){
+    public AdminSecurityService(AdminRepository adminRepository) {
         this.adminRepository = adminRepository;
     }
 
@@ -31,13 +30,13 @@ public class AdminSecurityService implements UserDetailsService {
             throw new UsernameNotFoundException("사용자를 찾을 수 없습니다.");
         }
         Admin admin = _admin.get();
-
         List<GrantedAuthority> authorities = new ArrayList<>();
         if("admin".equals(username)){
             authorities.add(new SimpleGrantedAuthority(AdminRole.ADMIN.getValue()));
         }else{
             authorities.add(new SimpleGrantedAuthority(AdminRole.USER.getValue()));
         }
+
         return new User(admin.getUserName(), admin.getPassword(), authorities);
     }
 }

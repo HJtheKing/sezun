@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import sezun.work.repository.Admin.AdminRepository;
 import sezun.work.repository.Admin.JpaAdminRepository;
 import sezun.work.repository.Qna.JpaQnaRepository;
-import sezun.work.repository.Qna.MemoryQnaRepository;
 import sezun.work.repository.Qna.QnaRepository;
 import sezun.work.service.AdminSecurityService;
 import sezun.work.service.AdminService;
@@ -45,6 +44,7 @@ public class SpringConfig {
 
         return new AdminService(adminRepository());
     }
+
     @Bean
     public AdminSecurityService adminSecurityService(){
         return new AdminSecurityService(adminRepository());
