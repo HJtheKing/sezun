@@ -26,24 +26,18 @@ public class AdminSecurityService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("1111111111111111");
-        Optional<Admin> _admin = this.adminRepository.findByName("admin");
-        System.out.println("2222222222222222");
+        Optional<Admin> _admin = this.adminRepository.findByName(username);
         if(_admin.isEmpty()){
-            System.out.println("333333333333333");
             throw new UsernameNotFoundException("사용자를 찾을 수 없습니다.");
         }
-        System.out.println("444444444444444");
         Admin admin = _admin.get();
 
-        System.out.println("5555555555555555");
         List<GrantedAuthority> authorities = new ArrayList<>();
         if("admin".equals(username)){
             authorities.add(new SimpleGrantedAuthority(AdminRole.ADMIN.getValue()));
         }else{
             authorities.add(new SimpleGrantedAuthority(AdminRole.USER.getValue()));
         }
-        System.out.println("ok");
         return new User(admin.getUserName(), admin.getPassword(), authorities);
     }
 }

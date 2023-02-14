@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Admin {
-    private String userName;
+    private String username;
     private String password;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +22,11 @@ public class Admin {
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.username = userName;
     }
 
     public String getPassword() {

@@ -22,8 +22,8 @@ public class SecurityConfig {
                 new AntPathRequestMatcher("/**")).permitAll()
                 .and()
                 .csrf().ignoringRequestMatchers(
-                        new AntPathRequestMatcher("/h2-console/**"), new AntPathRequestMatcher("/signup"), new AntPathRequestMatcher("/qna")
-                ,new AntPathRequestMatcher("/login"))
+                        new AntPathRequestMatcher("/h2-console/**")/*, new AntPathRequestMatcher("/signup"), new AntPathRequestMatcher("/qna")
+                ,new AntPathRequestMatcher("/login")*/)
                 .and()
                 .headers()
                 .addHeaderWriter(new XFrameOptionsHeaderWriter(

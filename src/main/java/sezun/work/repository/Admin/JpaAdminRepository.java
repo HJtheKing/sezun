@@ -28,9 +28,9 @@ public class JpaAdminRepository implements AdminRepository {
     }
 
     @Override
-    public Optional<Admin> findByName(String userName) {
-        List<Admin> result = em.createQuery("select m from Admin m where m.userName = :userName", Admin.class)
-                .setParameter("userName", userName)
+    public Optional<Admin> findByName(String username) {
+        List<Admin> result = em.createQuery("select m from Admin m where m.username = :username", Admin.class)
+                .setParameter("username", username)
                 .getResultList();
         return result.stream().findFirst();
     }
