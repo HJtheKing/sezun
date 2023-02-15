@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import sezun.work.domain.Admin;
-import sezun.work.domain.AdminRole;
+import sezun.work.role.AdminRole;
 import sezun.work.repository.Admin.AdminRepository;
 
 import java.util.ArrayList;
@@ -33,8 +33,10 @@ public class AdminSecurityService implements UserDetailsService {
         List<GrantedAuthority> authorities = new ArrayList<>();
         if("admin".equals(username)){
             authorities.add(new SimpleGrantedAuthority(AdminRole.ADMIN.getValue()));
+            System.out.println("ADMIN 접속");
         }else{
             authorities.add(new SimpleGrantedAuthority(AdminRole.USER.getValue()));
+            System.out.println("USER 접속");
         }
 
         return new User(admin.getUserName(), admin.getPassword(), authorities);
