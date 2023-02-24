@@ -25,6 +25,11 @@
         <td th:text="${q.category}"></td>
         <td th:text="${q.subject}"></td>
         <td th:text="${q.object}"></td>
+        <td>
+          <form th:action="@{/delete}" method="post">
+            <button type="submit" class="btn btn-primary" name="id" id="id" th:value="${q.id}">삭제</button>
+          </form>
+        </td>
       </tr>
       </tbody>
     </table>

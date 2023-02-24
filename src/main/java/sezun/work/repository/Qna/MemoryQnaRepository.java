@@ -58,4 +58,14 @@ public class MemoryQnaRepository implements QnaRepository {
     public void clearStore(){
         store.clear();
     }
+
+    @Override
+    public void deleteById(Long id) {
+
+    }
+
+    @Override
+    public void deleteAll() {
+
+    }
 }

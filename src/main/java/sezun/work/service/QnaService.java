@@ -28,4 +28,11 @@ public class QnaService {
     public Optional<Qna> findOne(Long id){
         return qnaRepository.findById(id);
     }
+
+    public void deleteById(Long id){
+        qnaRepository.deleteById(id);
+    }
+    public void deleteAll(){
+        qnaRepository.deleteAll();
+    }
 }

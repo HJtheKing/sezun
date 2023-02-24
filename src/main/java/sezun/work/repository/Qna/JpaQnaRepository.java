@@ -58,4 +58,17 @@ public class JpaQnaRepository implements QnaRepository{
         return em.createQuery("select q from Qna q", Qna.class)
                 .getResultList();
     }
+
+    @Override
+    public void deleteById(Long id) {
+        em.createQuery("delete from Qna q where q.id= :id")
+                .setParameter("id", id)
+                .executeUpdate();
+    }
+
+    @Override
+    public void deleteAll() {
+        em.createQuery("delete from Qna q", Qna.class)
+                .executeUpdate();
+    }
 }

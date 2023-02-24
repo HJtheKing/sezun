@@ -44,4 +44,10 @@ public class QnaController {
         model.addAttribute("Qnas",list);
         return "Qna/QnaList";
     }
+    @PostMapping(value = "/delete")
+    public String delete(QnaDeleteForm form){
+        System.out.println(form.getId());
+        qnaService.deleteById(form.getId());
+        return "redirect:/qna/list";
+    }
 }

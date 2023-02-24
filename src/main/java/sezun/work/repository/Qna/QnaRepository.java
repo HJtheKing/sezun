@@ -13,4 +13,6 @@ public interface QnaRepository {
     List<Qna> findByEmail(String email);
     List<Qna> findByContactNum(String contactNum);
     List<Qna> findAll();
+    void deleteById(Long id);
+    void deleteAll();
 }
